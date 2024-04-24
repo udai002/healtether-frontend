@@ -11,12 +11,7 @@ const Login  = ()=>{
 
     const navigate = useNavigate()
 
-    useEffect(()=>{
-        const token = Cookies.get("jwt_token")
-        if(token){
-            navigate('/')
-        }
-    },[])
+   
 
     const ref = useRef()
 
@@ -27,8 +22,6 @@ const Login  = ()=>{
     }
 
     const onUserLogin = async ()=>{
-        console.log(username)
-        console.log(password)
         const options = {
             method:"POST",
             headers:{
