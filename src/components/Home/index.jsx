@@ -10,9 +10,14 @@ const Home = ()=>{
         navigate('/login')
     }
 
-    
 
-   
+
+   useEffect(()=>{
+    const jwtToken = Cookies.get('jwt_token')
+    if(!jwtToken){
+        navigate('/login')
+    }
+   },[])
 
 
     return <div>
